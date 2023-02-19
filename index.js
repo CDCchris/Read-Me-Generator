@@ -4,67 +4,87 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
-const questions = [
-
-];
 
 inquirer
   .prompt([
    {
     type: "input",
-    name: "Title",
-    message: "what is your project called?"
+    name: "title",
+    message: "What is your project called?"
    },
 
    {
     type: "input",
-    name: "Description",
-    message: "what is your project description"
+    name: "description",
+    message: "What is your project description"
    },
 
    {
     type: "input",
-    name: "Table of Contents",
+    name: "contents",
     message: "What are the table of contents"
    },
 
    {
     type: "input",
-    name: "Installation",
+    name: "installation",
     message: "How do you install this project"
    },
 
    {
     type: "input",
-    name: "Usage",
+    name: "usage",
     message: "How do you use this project"
    },
 
    {
     type: "input",
-    name: "License",
+    name: "license",
     message: "What licence does this project use"
    },
 
    {
     type: "input",
-    name: "Contribution",
+    name: "contribution",
     message: "Who contributed to this project"
    },
 
    {
     type: "input",
-    name: "Tests",
+    name: "tests",
     message: "How did you test this project"
    },
 
    {
     type: "input",
-    name: "Questions",
-    message: "If you have any questions contact me"
+    name: "questions",
+    message: "Enter your email address"
+   },
+
+   {
+    type: "input",
+    name: "github",
+    message: "Enter your Github here"
    },
 
 ])
+
+.then((answer) => {
+    // Use user feedback for the questions
+
+    
+    {fs.writeFile(path.join(process.cwd() + "/finished/",'readme.md'),
+     generateMarkdown(answer), (err) => err && console.error(err))
+       // fs.writeFile('readme.md', generateMarkdown(answers) , () => {
+       //             if (err)
+       //             console.log;(err);
+       //             else {
+       //                 console.log("File written successfully\n")
+       //             }
+       // })
+
+    }
+});
 
 
 // function to write README file
