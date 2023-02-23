@@ -6,7 +6,12 @@ function generateMarkdown(answer) {
   ${answer.description}
 
   ## Contents
-  ${answer.contents}
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributions](#contribution)
+  - [Tests](#test)
+  - [Questions](#questions)
 
   ## Installation
   ${answer.installation}
